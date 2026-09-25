@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{$("#year")&&($("#year").textContent=new Date().getFullYear())})

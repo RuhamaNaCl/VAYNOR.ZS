@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{let u=JSON.parse(localStorage.getItem("vaynor_user")||"null");if($("#account-name"))$("#account-name").textContent=u?.name||"Guest";if($("#account-email"))$("#account-email").textContent=u?.email||"Sign in to manage your account"})

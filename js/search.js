@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{$("#global-search")?.addEventListener("keydown",e=>{if(e.key==="Enter"){let q=e.target.value.trim();location.href="shop.html"+(q?"?q="+encodeURIComponent(q):"")}})})
