@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Add product — VAYNOR Admin</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/admin.css"></head>
+<body><div class="admin-layout"><aside class="admin-side"><a class="logo" href="index.html">VAYNOR</a><nav class="admin-nav"><a href="index.html">Dashboard</a><a href="products.html">Products</a><a href="categories.html">Categories</a><a href="orders.html">Orders</a><a href="customers.html">Customers</a><a href="reviews.html">Reviews</a><a href="discounts.html">Discounts</a><a href="settings.html">Settings</a><a href="payments.html">Payments</a><a href="../index.html">← Storefront</a><a href="#" data-admin-logout>Sign out</a></nav></aside>
+<main class="admin-main"><div class="admin-top"><div><span class="eyebrow">VAYNOR ADMIN</span><h1 style="margin:5px 0">Add product</h1></div><a class="btn small alt" href="products.html">Back to products</a></div>
+<form id="product-form" class="card stack" style="max-width:760px">
+<label for="product-name">Product name *</label><input id="product-name" name="name" required maxlength="160" placeholder="e.g. Minimal Desk Lamp">
+<label for="product-price">Price (BDT) *</label><input id="product-price" name="price" type="number" min="0" step="0.01" required placeholder="1200">
+<label for="product-compare">Compare-at price (optional)</label><input id="product-compare" name="compare_at_price" type="number" min="0" step="0.01" placeholder="1500">
+<label for="product-category">Category</label><input id="product-category" name="category" maxlength="100" placeholder="Home, Electronics, Lifestyle...">
+<label for="product-stock">Stock quantity</label><input id="product-stock" name="stock" type="number" min="0" step="1" value="0" required>
+<label for="product-description">Description</label><textarea id="product-description" name="description" rows="5" placeholder="Describe the product..."></textarea>
+<label for="product-image">Product image * (JPG, PNG, WebP; max 5 MB)</label><input id="product-image" name="image" type="file" accept="image/jpeg,image/png,image/webp" required>
+<img id="image-preview" alt="Image preview" hidden style="max-width:220px;max-height:220px;object-fit:contain;border-radius:10px">
+<label style="display:flex;align-items:center;gap:10px"><input id="product-active" type="checkbox" checked style="width:auto"> Publish product (visible in store)</label>
+<button class="btn" id="save-product" type="submit">Upload image & save product</button><p id="product-message" role="status" aria-live="polite"></p>
+</form></main></div><div id="toast" class="toast"></div>
+<script src="../js/app.js"></script><script src="../js/ui.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../js/supabase-client.js"></script><script src="../js/admin-auth.js"></script><script src="../js/product-admin.js"></script></body></html>
