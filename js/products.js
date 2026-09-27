@@ -1,0 +1,2 @@
+// Change the product name, price and image paths here.
+window.VAYNOR_PRODUCT={id:"vaynor-bracelet",name:"VAYNOR Bracelet",price:0,currency:"৳",images:["assets/images/bracelet-main.jpg","assets/images/bracelet-clasp.jpg","assets/images/bracelet-detail.jpg","assets/images/bracelet-box.jpg"]}; // Set actual price before launch.
