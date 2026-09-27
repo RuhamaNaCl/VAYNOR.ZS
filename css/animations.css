@@ -1,0 +1,1 @@
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.hero-copy,.hero-img,.intro,.features article,.product-info{animation:rise .6s ease both}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
