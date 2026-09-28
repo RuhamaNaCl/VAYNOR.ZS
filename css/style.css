@@ -13,18 +13,15 @@
 }
 
 /* Logo */
-.brand {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-}
-
 .brand-logo {
   display: block;
-  width: 125px;
-  height: 48px;
+  width: 150px;
+  height: auto;
+  max-height: 55px;
   object-fit: contain;
-}
+  background: transparent;
+  }
+
 
 /* Navigation — right aligned */
 .main-nav {
