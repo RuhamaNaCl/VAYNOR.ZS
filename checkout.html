@@ -1,1 +1,31 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Checkout — VAYNOR</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"></head><body><header class="header"><a class="brand" href="index.html"><img src="assets/Vaynor-logo.jpeg" alt="VAYNOR" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span>V A Y N O R</span></a><nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><aside><a href="login.html">Account</a><a href="cart.html">Bag <b id="cart-count">0</b></a></aside></header><main class="wrap narrow"><p class="eyebrow">CHECKOUT</p><h1>Guest checkout</h1><p>You can order without creating an account.</p><form id="checkout-form" class="form"><label>Full name<input name="name" required></label><label>Phone number<input name="phone" type="tel" required></label><label>Email (optional)<input name="email" type="email"></label><label>Delivery address<textarea name="address" rows="4" required></textarea></label><label>District / City<input name="city" required></label><label>Payment method<select name="payment" required><option value="cod">Cash on Delivery</option><option value="bkash">bKash</option><option value="nagad">Nagad</option></select></label><button class="btn full" type="submit">Place order</button><p class="small muted">Demo: this form stores order data only in this browser. Connect and test a secure backend before accepting real orders/payments.</p><p id="checkout-message" aria-live="polite"></p></form></main><footer><b>VAYNOR</b><span>Discover. Choose. Order.</span><a href="contact.html">Contact</a></footer><script src="js/products.js"></script><script src="js/cart.js"></script><script src="js/checkout.js"></script><script src="js/app.js"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Checkout — VAYNOR</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"></head><body>
+  
+  
+  
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img
+      class="brand-logo"
+      src="assets/Vaynor-logo.jpeg"
+      alt="VAYNOR"
+    >
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="login.html">Account</a>
+    <a href="cart.html">
+      Cart <span id="cart-count">0</span>
+    </a>
+  </div>
+</header>
+  
+  
+  
+  <main class="wrap narrow"><p class="eyebrow">CHECKOUT</p><h1>Guest checkout</h1><p>You can order without creating an account.</p><form id="checkout-form" class="form"><label>Full name<input name="name" required></label><label>Phone number<input name="phone" type="tel" required></label><label>Email (optional)<input name="email" type="email"></label><label>Delivery address<textarea name="address" rows="4" required></textarea></label><label>District / City<input name="city" required></label><label>Payment method<select name="payment" required><option value="cod">Cash on Delivery</option><option value="bkash">bKash</option><option value="nagad">Nagad</option></select></label><button class="btn full" type="submit">Place order</button><p class="small muted">Demo: this form stores order data only in this browser. Connect and test a secure backend before accepting real orders/payments.</p><p id="checkout-message" aria-live="polite"></p></form></main><footer><b>VAYNOR</b><span>Discover. Choose. Order.</span><a href="contact.html">Contact</a></footer><script src="js/products.js"></script><script src="js/cart.js"></script><script src="js/checkout.js"></script><script src="js/app.js"></script></body></html>
