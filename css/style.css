@@ -84,3 +84,11 @@
   }
   }
     
+/* VAYNOR Logo Background Fix */
+.brand img,
+.brand-logo {
+  mix-blend-mode: multiply;
+  background: transparent;
+  object-fit: contain;
+  }
+    
