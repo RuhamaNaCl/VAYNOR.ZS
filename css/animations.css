@@ -46,9 +46,12 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  mix-blend-mode: screen;
-  filter: grayscale(1) brightness(0) invert(1);
-}
+  background: transparent;
+  mix-blend-mode: normal;
+  filter: none;
+   }
+
+
 
 .intro-light {
   position: absolute;
