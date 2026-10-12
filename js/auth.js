@@ -1,14 +1,12 @@
-const SUPABASE_URL = "https://hddphtxjtcjqqeouxqmh.supabase.co";
-
-const SUPABASE_KEY = "তোমার পাঠানো publishable key এখানে";
-
-const supabaseClient = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
-
 document.addEventListener("DOMContentLoaded", () => {
+
+  const client = window.vaynorSupabase;
+
+  if (!client) {
+    console.error("VAYNOR Supabase client not found.");
+    toast("Connection error. Please try again.");
+    return;
+  }
 
   // LOGIN
   $("#login-form")?.addEventListener("submit", async (e) => {
@@ -17,19 +15,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = $("#email").value.trim();
     const password = $("#password")?.value || "";
 
-    if (!password) {
-      toast("Please enter your password");
+    if (!email || !password) {
+      toast("Please enter your email and password.");
       return;
     }
 
-    const { data, error } =
-      await supabaseClient.auth.signInWithPassword({
-        email,
-        password
-      });
+    const { data, error } = await client.auth.signInWithPassword({
+      email,
+      password
+    });
 
     if (error) {
+      console.error("Login error:", error);
       toast(error.message);
+      return;
+    }
+
+    if (!data?.user) {
+      toast("Login failed. Please try again.");
       return;
     }
 
@@ -49,40 +52,55 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = $("#reg-email").value.trim();
     const password = $("#reg-password")?.value || "";
 
-    if (!password) {
-      toast("Please enter a password");
+    if (!name || !email || !password) {
+      toast("Please fill in all fields.");
       return;
     }
 
-    const { data, error } =
-      await supabaseClient.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            name: name
-          }
+    const { data, error } = await client.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          name: name
         }
-      });
+      }
+    });
 
     if (error) {
+      console.error("Register error:", error);
       toast(error.message);
       return;
     }
 
-    toast("Account created successfully");
+    // Create profile if a session exists
+    if (data?.user && data?.session) {
+      const { error: profileError } = await client
+        .from("profiles")
+        .upsert({
+          id: data.user.id,
+          full_name: name
+        });
 
-    setTimeout(() => {
-      location.href = "account.html";
-    }, 700);
+      if (profileError) {
+        console.error("Profile error:", profileError);
+      }
+
+      toast("Account created successfully");
+
+      setTimeout(() => {
+        location.href = "account.html";
+      }, 700);
+
+    } else {
+      toast("Account created. Please verify your email, then login.");
+    }
   });
 
 
   // LOGOUT
   $("#logout")?.addEventListener("click", async () => {
-
-    await supabaseClient.auth.signOut();
-
+    await client.auth.signOut();
     location.href = "index.html";
   });
 
